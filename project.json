@@ -1,0 +1,17 @@
+{
+  "s3": {
+    "stage": {
+      "bucket": "projects-staging.seattletimes.com",
+      "path": "singular-yoke"
+    },
+    "live": {
+      "bucket": "projects.seattletimes.com",
+      "path": "2018/fyi-guy/car-owners"
+    }
+  },
+  "title": "",
+  "description": "",
+  "url": "",
+  "slug": "",
+  "tags": []
+}

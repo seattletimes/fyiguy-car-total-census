@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>
+    <%= json.project.title %>
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Safari, you're the worst -->
+  <meta name='format-detection' content='telephone=no'>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <%= t.include("partials/_head.html") %>
+</head>
+
+<body>
+
+  <responsive-child class="map-container">
+    <div class="outmost">
+      <section class="chatter">
+        <h1>Where are our cars?</h1>
+        <p>Downtown Seattle and the University District contain the only census tracts in the city where the majority of households don’t own a car.</p>
+      </section>
+
+      <div class="aspect-ratio-outer">
+        <div class="aspect-ratio-inner">
+
+          <leaflet-map zoom=11>
+            <tile-layer layer="cartoPositron"></tile-layer>
+          </leaflet-map>
+
+        </div>
+        <aside class="legend">
+          <h1>Households with one or more cars</h1>
+          <ul class="scale">
+            <li>
+              <span class="block" style="background-color: #081d58"></span> 91% and up</li>
+            <li>
+               <span class="block" style="background-color: #49006a"></span> 76- 90%</li>
+            <li>
+              <span class="block" style="background-color: #ae017e"></span> 61-75%</li>
+            <li>
+              <span class="block" style="background-color: #fa9fb5"></span> 46-60%</li>
+            <li>
+              <span class="block" style="background-color: #fde0dd"></span> 0-45%</li>
+          </ul>
+        </aside>
+      </div>
+
+
+      <div class="source">Source: U.S. Census
+        <span class="credit">Emily M. Eng / THE SEATTLE TIMES</div>
+    </div>
+  </responsive-child>
+
+  <script src="app.js"></script>
+  <% /*= t.include("partials/_foot.html"); */ %>
+    <%= t.include("partials/_workHere.html") %>
+</body>
+
+</html>
